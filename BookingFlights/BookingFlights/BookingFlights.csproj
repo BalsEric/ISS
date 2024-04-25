@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="..\packages\EntityFramework.6.5.0-preview2-24180-01\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.0-preview2-24180-01\build\EntityFramework.props')" />
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{1985A8BC-5A81-4B0C-9DB3-DC3734C49F7F}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>BookingFlights</RootNamespace>
+        <AssemblyName>BookingFlights</AssemblyName>
+        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+          <HintPath>..\packages\EntityFramework.6.5.0-preview2-24180-01\lib\net45\EntityFramework.dll</HintPath>
+        </Reference>
+        <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+          <HintPath>..\packages\EntityFramework.6.5.0-preview2-24180-01\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+        </Reference>
+        <Reference Include="System" />
+        <Reference Include="System.ComponentModel.DataAnnotations" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Windows.Forms" />
+        <Reference Include="System.Xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="controllers\EmployeePageController.cs" />
+        <Compile Include="controllers\LogInController.cs" />
+        <Compile Include="controllers\ReservationPageController.cs" />
+        <Compile Include="controllers\SearchPageController.cs" />
+        <Compile Include="controllers\SignUpController.cs" />
+        <Compile Include="controllers\TicketsPageController.cs" />
+        <Compile Include="Model\Client.cs" />
+        <Compile Include="Model\Employee.cs" />
+        <Compile Include="Model\Entity.cs" />
+        <Compile Include="Model\Flight.cs" />
+        <Compile Include="Model\Request.cs" />
+        <Compile Include="Model\RequestType.cs" />
+        <Compile Include="Model\Ticket.cs" />
+        <Compile Include="Repository\ClientRepository.cs" />
+        <Compile Include="Repository\DBContext.cs" />
+        <Compile Include="Repository\EmployeeRepository.cs" />
+        <Compile Include="Repository\FlightRepository.cs" />
+        <Compile Include="Repository\Repository.cs" />
+        <Compile Include="Repository\RequestRepository.cs" />
+        <Compile Include="Repository\TicketRepository.cs" />
+        <Compile Include="Runner.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Service\Service.cs" />
+        <Compile Include="views\EmployeePage.cs" />
+        <Compile Include="views\EmployeePage.Designer.cs" />
+        <Compile Include="views\LogIn.cs" />
+        <Compile Include="views\LogIn.Designer.cs" />
+        <Compile Include="views\ReservationPage.cs" />
+        <Compile Include="views\ReservationPage.Designer.cs" />
+        <Compile Include="views\SearchPage.cs" />
+        <Compile Include="views\SearchPage.Designer.cs" />
+        <Compile Include="views\SignUp.cs" />
+        <Compile Include="views\SignUp.Designer.cs" />
+        <Compile Include="views\TicketPage.cs" />
+        <Compile Include="views\TicketPage.Designer.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="views\EmployeePage.resx" />
+      <EmbeddedResource Include="views\LogIn.resx" />
+      <EmbeddedResource Include="views\ReservationPage.resx" />
+      <EmbeddedResource Include="views\SearchPage.resx" />
+      <EmbeddedResource Include="views\SignUp.resx" />
+      <EmbeddedResource Include="views\TicketPage.resx" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="App.config" />
+      <None Include="packages.config" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+      <PropertyGroup>
+        <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
+      </PropertyGroup>
+      <Error Condition="!Exists('..\packages\EntityFramework.6.5.0-preview2-24180-01\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.0-preview2-24180-01\build\EntityFramework.props'))" />
+      <Error Condition="!Exists('..\packages\EntityFramework.6.5.0-preview2-24180-01\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.0-preview2-24180-01\build\EntityFramework.targets'))" />
+    </Target>
+    <Import Project="..\packages\EntityFramework.6.5.0-preview2-24180-01\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.0-preview2-24180-01\build\EntityFramework.targets')" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>

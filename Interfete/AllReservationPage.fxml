@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ListView layoutX="58.0" layoutY="52.0" prefHeight="272.0" prefWidth="255.0" />
+      <Button layoutX="417.0" layoutY="262.0" mnemonicParsing="false" text="Request change" />
+      <Button layoutX="100.0" layoutY="341.0" mnemonicParsing="false" text="Request to cancel reservation" />
+      <TextField layoutX="377.0" layoutY="64.0" prefHeight="26.0" prefWidth="175.0" promptText="FIRST NAME" />
+      <TextField layoutX="377.0" layoutY="110.0" prefHeight="26.0" prefWidth="175.0" promptText="LAST NAME" />
+      <TextField layoutX="377.0" layoutY="161.0" prefHeight="26.0" prefWidth="175.0" promptText="CNP" />
+      <DatePicker layoutX="376.0" layoutY="209.0" promptText="BIRTHDAY" />
+   </children>
+</AnchorPane>

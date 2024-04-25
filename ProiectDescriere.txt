@@ -1,0 +1,20 @@
+REZERVARE BILETE AVION
+O companie aeriana pune la dispozitie bilete pentru zboruri internationale. In fiecare zi compania are zboruri la care clientii pot
+achizitiona bilete. Pentru a putea achizitiona un bilet, clientul trebuie sa se inregistreze pe site-ul companiei si sa introduca cateva 
+date personale(nume, email, parola) si sa se logheze. Dupa logare se poate selecta locatia de plecare, destinatia, data zborului si nr. de persoane. Se afiseaza zborurile disponibile, daca sunt destule locuri disponibile. Pentru rezervarea unui zbor se introduc date personale(nume, CNP) si se vor afisa locurile din avion(libere sau rezervate). Dupa rezervarea biletului angajatul vede rezervarea, acesta poate s-o anuleze sau sa o modifice.
+
+-Inregistrare
+-Logare
+-Introduce date zbor
+-Afisare zboruri (daca sunt locuri disponibile)
+-Introduce datele pentru fiecare pasager
+-Rezervare zbor(adauga datele persoanei in zbor)
+-Poate sa stearga rezervarea la cerinta unui client(angajat)
+-Poate modifica datele personale asociate pasagerilor(angajat)
+
+
+Client
+Angajat
+Zbor
+Bilet
+Cerere
